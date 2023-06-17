@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+@font-face {
+    font-family: 'HOLLYWOOD STARFIRE';
+    src: url("HOLLYWOOD\ STARFIRE.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'HOLLYWOOD STARFIRE';
+}
+
+body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 79vmax 19vmax;
+    grid-template-rows: 100%;
+    background-color: rgb(43, 42, 42);
+    color: white;
+}
+
+body#index {
+    background-image: url('./Photos/landingpagephoto.png');
+    background-repeat: no-repeat;
+}
+
+body#hudba {
+
+}
+
+body#hudba::after {
+    content:'';
+    background-image: url(/Photos/hudba-background-foto.png);
+    position: absolute;
+    top:0px;
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    filter: blur(3px);
+}
+
+.gallery-pic {
+    min-height: 500px;
+    width: 80%;
+    display: none;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.current-active {
+    display: block;
+}
+
+.old-active {
+    display: block;
+}
+
+body#galerie > main {
+    min-height: 100%;
+    width: 100%;
+}
+
+.gallery-buttons {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+.gallery-buttons > button {
+    background-color: black;
+    color: #F0E938;
+    padding: 4vh;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1em;
+}
+.gallery-buttons > button:hover {
+    background-color: hsla(58, 62%, 45%, 0.7);
+    color: white;
+    font-weight: bold;
+    
+}
+
+#gallery-current {
+    display: block;
+}
+
+#gallery-historical {
+    display: none;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    margin: auto;
+}
+
+.gallery-window {
+    margin-top: 10vh;
+    margin-left: 30%;
+    height: 50%;
+    width: 40vw;
+}
+
+.gallery-navigation {
+    position: absolute;
+    background: none;
+    bottom: 40%;
+    z-index: 10;
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+}
+
+.gallery-navigation-btn {
+    height: 100px;
+    width: 100px;
+    background: none;
+    border: none;
+    opacity: 0.7;
+    
+}
+
+.gallery-navigation-btn:hover {
+    opacity: 0.99;
+}
+
+#forward-curr, #forward-hist {
+    background-repeat: no-repeat;
+    background-image: url("./forward.png");
+}
+
+#back-curr, #back-hist {
+    background-repeat: no-repeat;
+    background-image: url("./backward.png");
+}
+
+header {
+    opacity: 1 !important;
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+main {
+    z-index: 1;
+    grid-row: 1;
+    grid-column: 1;
+    margin: auto;
+    
+}
+
+footer {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 98vw;
+}
+
+nav {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+    padding: 50px;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+nav > a {
+    align-self: center;
+    text-align: center;
+    color: #F0E938;
+    width: 12vw;
+    height: 3vw;
+    padding: 0.7vw;
+}
+
+nav > a:hover {
+    transform: scale(1.1);
+    transition: 0.7s;
+    color: black;
+    background-color:hsla(58, 86%, 58%, 0.7);
+}
+
+body#index h1 {
+    margin-top: 70vh;
+    margin-bottom: 2vh;
+}
+
+body#index > main {
+    width: 80%;
+    text-align: left;
+}
+
+body#index > main > h1 {
+    display: inline-block;
+    border-bottom: 1px solid #F0E938;
+}
+
+body#index main > p {
+    background-color: hsla(0, 0%, 0%, 0.8);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    font-size: 13pt;
+    letter-spacing: 0.9px;
+}
+
+
+body#hudba > main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    height: 35vmax;
+    width: 50vw;
+    margin-left: 10vmax;
+    margin-right: 10vmax;
+    border: 10px red;
+}
+
+#picture1 {
+    overflow: hidden;
+    min-width: 35%;
+}
+
+.hudba-main-picture {
+    position: relative;
+    left: -3vmax;
+    height: 35vmax;
+    transition: 0.6s;
+}
+
+.hudba-main-picture:hover {
+    transition: 0.6s;
+    transform: scale(1.1);
+}
+
+.square-sections {
+    background-color: black;
+}
+
+#concerts {
+    padding: 2vmax;
+    min-width: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2vmax;
+    overflow: scroll;
+}
+
+#concerts > h1 {
+    border-bottom: #F0E938 2px solid;
+}
+
+#concerts-container > * {
+    border-bottom: 1px #F0E938 solid;
+    padding-bottom: 0.5vmax;
+    margin-top: 5vh;
+}
+
+#stageplan > * {
+   color: white;
+   width: 30%;
+}
+#stageplan > *:hover {
+    color: #F0E938;
+ }
+
+ #contact-us {
+    overflow:initial;
+    white-space: pre-line;
+ }
+
+ #contact-us > * {
+    padding-bottom: 0.5vmax;
+ }
+
+ #contact-us > a {
+    color: white;
+ }
+
+ #contact-us > a:hover {
+    color: #4267B2;
+ }
+
+ #facebook-link {
+    color: #4267B2;
+    font-size: 24px;
+    
+ }
+
+ #facebook-link:hover {
+    color: white;
+    transition: 0.7s;
+    background-color: #4267B2;
+ }
+
+.smaller-square {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 30%;
+}
+
+.smaller-square > section {
+    padding: 1vmax;
+    padding-top: 4vmax;
+    padding-bottom: 4vmax;
+    text-align: center;
+}
+
+.decorative-stripe {
+    position: fixed;
+    left: 10vw;
+    top: 25vmax;
+    width: 25px;
+    height: 800px;
+    background-color: hsla(58, 86%, 58%, 0.2);
+    transform: rotate(-45deg);
+}
+
+.stripe-1 {
+    background-color: hsla(58, 86%, 58%, 0.4)
+}
+
+.stripe-2 {
+    top: 21vmax;
+    background-color: hsla(58, 86%, 58%, 0.2);
+}
+
+.stripe-3 {
+    top: 29vmax;
+    background-color: hsla(58, 86%, 58%, 0.6);
+}
+
+section::-webkit-scrollbar {
+    width: 1px;
+}
+
+@media screen and (max-width: 1095px) {
+    * {
+        
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 100% ;
+        grid-template-rows: 49% 49% 1%;
+    }
+
+    body#index > main > h1 {
+        margin-top: 20vh;
+    }
+
+    body#hudba > main {
+        flex-direction: column;
+        gap: 50px;
+        height: 100%;
+        width: 70vw;
+        margin-left: 10vmax;
+        margin-right: 10vmax;
+    }
+
+    #picture1 {
+        height: 70vh;
+    }
+
+    .hudba-main-picture {
+        height: 80%;
+        width: 70%;
+        max-width: 80%;
+        margin-left: 12vw;
+        margin-right: 7vw;
+        background-;
+    }
+
+    .smaller-square {
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 75%;
+    }
+
+    header {
+        grid-row: 1;
+        grid-column: 1;
+        
+    }
+
+    main {
+        grid-row: 2;
+    }
+
+    footer {
+        grid-row: 3;
+    }
+
+    nav {
+        padding-bottom: 50px;
+    }
+
+    nav > a {
+        width: 40vw;
+    }
+}
