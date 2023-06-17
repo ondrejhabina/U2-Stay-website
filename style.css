@@ -43,10 +43,10 @@ body#hudba::after {
 }
 
 .gallery-pic {
-    min-height: 500px;
-    width: 80%;
+    margin: auto;
+    height: 80%;
+    max-width: 80%;
     display: none;
-    max-width: 100%;
     object-fit: cover;
 }
 
@@ -66,18 +66,17 @@ body#galerie > main {
 .gallery-buttons {
     margin-top: 10vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     color: black;
     gap: 20%;
     display: flex;
-    flex-direction: column;
     justify-content:space-around;
 }
 
 .gallery-buttons > button {
     background-color: black;
     color: #F0E938;
-    padding: 4vh;
+    padding: 30px;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.1em;
@@ -90,11 +89,11 @@ body#galerie > main {
 }
 
 #gallery-current {
-    display: block;
+
 }
 
 #gallery-historical {
-    display: none;
+    
 }
 
 .gallery-container {
@@ -105,25 +104,31 @@ body#galerie > main {
 }
 
 .gallery-window {
-    margin-top: 10vh;
-    margin-left: 30%;
-    height: 50%;
-    width: 40vw;
+    height: 85vh;
+    width: 85vw;
+    margin: auto;
+    background-color: black;
+}
+
+.gallery-window:focus {
+    outline: none;
+}
+
+.gallery-window::backdrop {
+    background: black;
+    opacity: 0.6;
 }
 
 .gallery-navigation {
-    position: absolute;
-    background: none;
-    bottom: 40%;
-    z-index: 10;
+    margin: auto;
     display: flex;
-    width: 30vw;
+    width: 90%;
     justify-content: space-between;
 }
 
 .gallery-navigation-btn {
-    height: 100px;
-    width: 100px;
+    height: 105px;
+    width: 45px;
     background: none;
     border: none;
     opacity: 0.7;
@@ -139,9 +144,17 @@ body#galerie > main {
     background-image: url("./forward.png");
 }
 
+#forward-curr:focus, #forward-hist:focus {
+    outline: none;
+}
+
 #back-curr, #back-hist {
     background-repeat: no-repeat;
     background-image: url("./backward.png");
+}
+
+#back-curr:focus, #back-hist:focus {
+    outline: none;
 }
 
 header {
@@ -416,5 +429,20 @@ section::-webkit-scrollbar {
 
     nav > a {
         width: 40vw;
+    }
+
+    .gallery-pic {
+        width: 60%;
+    }
+
+    .gallery-buttons {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .gallery-pic {
+        width: 85%;
     }
 }

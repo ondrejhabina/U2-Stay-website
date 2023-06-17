@@ -1,5 +1,3 @@
-//Funkce pro funkčnost galerie
-
 const newGallery = document.getElementById('gallery-current');
 
 const oldGallery = document.getElementById('gallery-historical');
@@ -8,22 +6,39 @@ const newGalleryBtn = document.getElementById('open-new-btn');
 
 const oldGalleryBtn = document.getElementById('open-old-btn');
 
+//dialog close buttons
+
+const closeCurrentModal = document.querySelector('.close-current-modal');
+
+const closeHistoricalModal = document.querySelector('.close-historical-modal');
+
 document.addEventListener('DOMContentLoaded', () => {
     newGalleryBtn.addEventListener('click', openNewGallery);
 
     oldGalleryBtn.addEventListener('click', openOldGallery);
+
+    closeCurrentModal.addEventListener('click', closeNewGallery);
+
+    closeHistoricalModal.addEventListener('click', closeOldGallery);
 })
 
+//toggling modals
+
 function openNewGallery() {
-    oldGallery.style.display = 'none';
-    newGallery.style.display = 'block';
+    newGallery.showModal();
 }
 
 function openOldGallery() {
-    oldGallery.style.display = 'block';
-    newGallery.style.display = 'none';
+    oldGallery.showModal();
 }
 
+function closeNewGallery() {
+    newGallery.close();
+}
+
+function closeOldGallery() {
+    oldGallery.close();
+}
 
 
 //Following code enables gallery navigation
@@ -32,11 +47,12 @@ function openOldGallery() {
 const currentPhotosArr = Array.from(document.querySelector('#gallery-current').children);
 const historicalPhotosArr = Array.from(document.querySelector('#gallery-historical').children);
 
+//to remove non-img children from the above arrays
+currentPhotosArr.pop();
+historicalPhotosArr.pop();
 currentPhotosArr.pop();
 historicalPhotosArr.pop();
 
-console.log(currentPhotosArr);
-console.log(historicalPhotosArr);
 
 const backArrowCurrent = document.getElementById('back-curr');
 const forwardArrowCurrent = document.getElementById('forward-curr');
