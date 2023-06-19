@@ -76,5 +76,4 @@ document.addEventListener('DOMContentLoaded', () => {
         eachConcert.innerHTML = `${koncert.datum}, ${koncert.verejnost}, ${koncert.misto}`;
         concertsEl.appendChild(eachConcert);
     })
-    
 })

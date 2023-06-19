@@ -42,6 +42,18 @@ body#hudba::after {
     filter: blur(3px);
 }
 
+body#galerie::after {
+    content:'';
+    background-image: url(/Photos/galerie-background-foto.jpg);
+    position: absolute;
+    top:0px;
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    filter: blur(3px);
+}
+
 .gallery-pic {
     margin: auto;
     height: 80%;
@@ -64,13 +76,13 @@ body#galerie > main {
 }
 
 .gallery-buttons {
-    margin-top: 10vh;
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
     color: black;
-    gap: 20%;
     display: flex;
-    justify-content:space-around;
+    margin-left: 10vmax;
+    gap: 15%;
 }
 
 .gallery-buttons > button {
@@ -79,13 +91,20 @@ body#galerie > main {
     padding: 30px;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.8em;
+    height: 20vw;
+    width: 20vw;
 }
+
 .gallery-buttons > button:hover {
-    background-color: hsla(58, 62%, 45%, 0.7);
+    background: hsla(58, 62%, 45%, 0.7);
     color: white;
     font-weight: bold;
-    
+}
+
+
+#open-old-btn {
+
 }
 
 #gallery-current {
@@ -313,7 +332,7 @@ body#hudba > main {
  }
 
  #facebook-link {
-    color: #4267B2;
+    color: white;
     font-size: 24px;
     
  }
@@ -363,7 +382,7 @@ body#hudba > main {
 }
 
 section::-webkit-scrollbar {
-    width: 1px;
+    width: 0px;
 }
 
 @media screen and (max-width: 1095px) {
@@ -372,13 +391,17 @@ section::-webkit-scrollbar {
     }
 
     body {
-        display: grid;
-        grid-template-columns: 100% ;
-        grid-template-rows: 49% 49% 1%;
+        display: flex;
+        flex-direction: column;
+
     }
 
     body#index > main > h1 {
-        margin-top: 20vh;
+        margin-top: 50px;
+    }
+
+    body#galerie::after {
+        height: 110%;
     }
 
     body#hudba > main {
@@ -386,27 +409,22 @@ section::-webkit-scrollbar {
         gap: 50px;
         height: 100%;
         width: 70vw;
-        margin-left: 10vmax;
-        margin-right: 10vmax;
+        margin: auto;
+        margin-top: 10vmax;
     }
 
-    #picture1 {
-        height: 70vh;
-    }
 
     .hudba-main-picture {
-        height: 80%;
-        width: 70%;
-        max-width: 80%;
-        margin-left: 12vw;
-        margin-right: 7vw;
-        background-;
+        position: static;
+        
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
     }
 
     .smaller-square {
-        flex-direction: row;
-        justify-content:space-between;
-        gap: 75%;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     header {
@@ -425,10 +443,12 @@ section::-webkit-scrollbar {
 
     nav {
         padding-bottom: 50px;
+        padding-top: 0;
     }
 
     nav > a {
         width: 40vw;
+        height: 60px;
     }
 
     .gallery-pic {
@@ -438,6 +458,43 @@ section::-webkit-scrollbar {
     .gallery-buttons {
         flex-direction: column;
     }
+
+    .decorative-stripe {
+        position: fixed;
+        left: 10vw;
+        top: 25vmax;
+        width: 25px;
+        height: 150vh;
+        background-color: hsla(58, 86%, 58%, 0.2);
+        transform: rotate(-45deg);
+    }
+    
+    .stripe-1 {
+        background-color: hsla(58, 86%, 58%, 0.4)
+    }
+    
+    .stripe-2 {
+        top: 19vmax;
+        background-color: hsla(58, 86%, 58%, 0.2);
+    }
+    
+    .stripe-3 {
+        top: 31vmax;
+        background-color: hsla(58, 86%, 58%, 0.6);
+    }
+
+    .smaller-square {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+     }
+
+     #stageplan {
+        height: 80px;
+     }
+
+     
+
 }
 
 @media screen and (max-width: 750px) {
