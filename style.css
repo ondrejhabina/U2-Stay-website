@@ -283,6 +283,7 @@ body#hudba > main {
 
 .square-sections {
     background-color: black;
+    opacity: 0.9;
 }
 
 #concerts {
