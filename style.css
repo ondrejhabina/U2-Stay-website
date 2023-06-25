@@ -45,6 +45,7 @@ body#hudba::after {
 body#galerie::after {
     content:'';
     background-image: url(/Photos/galerie-background-foto.jpg);
+    background-size: cover;
     position: absolute;
     top:0px;
     opacity: 0.7;
@@ -89,8 +90,6 @@ body#galerie > main {
     background-color: black;
     color: #F0E938;
     padding: 30px;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Quicksand', sans-serif;
     font-size: 1.8em;
     height: 20vw;
     width: 20vw;
@@ -100,19 +99,6 @@ body#galerie > main {
     background: hsla(58, 62%, 45%, 0.7);
     color: white;
     font-weight: bold;
-}
-
-
-#open-old-btn {
-
-}
-
-#gallery-current {
-
-}
-
-#gallery-historical {
-    
 }
 
 .gallery-container {
@@ -174,6 +160,23 @@ body#galerie > main {
 
 #back-curr:focus, #back-hist:focus {
     outline: none;
+}
+
+.close-historical-modal {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
+    left: calc(100% - 70px);
+    background: url('/Photos/close-modal.png');
+    background-size: contain;
+    border: none;
+    opacity: 0.7;
+}
+
+.close-historical-modal:hover {
+    opacity: 0.99;
 }
 
 header {
@@ -458,7 +461,18 @@ section::-webkit-scrollbar {
 
     .gallery-buttons {
         flex-direction: column;
+        gap: 30px;
+        margin-left: 15vw;
+        padding-bottom: 30px;
     }
+        
+
+    .gallery-buttons > button {
+        width: 70vw;
+        height: 70vw;
+
+     }
+
 
     .decorative-stripe {
         position: fixed;
@@ -487,14 +501,18 @@ section::-webkit-scrollbar {
     .smaller-square {
         display: flex;
         flex-direction: row;
-        width: 80%;
+        gap: 10vw;
+        max-width: 79%;
+        margin: auto;
+        padding-bottom: 50px;
+
      }
 
      #stageplan {
-        height: 80px;
+        overflow: initial;
+        white-space: pre-line;
      }
 
-     
 
 }
 
@@ -502,5 +520,20 @@ section::-webkit-scrollbar {
 
     .gallery-pic {
         width: 85%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .smaller-square {
+        flex-direction: column;
+    }
+
+    #stageplan {
+        width: 50vw;
+        padding-top: 0;
+    }
+
+    #contact {
+
     }
 }

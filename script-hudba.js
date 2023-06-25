@@ -1,53 +1,33 @@
 const koncerty = [
     {
-        datum: '13.01.2023',
-        verejnost: 'veřejná akce',
-        misto: 'Melodka, Brno'
+        datum: '27.06.2023',
+        cas: '20:30',
+        misto: 'Festival k výročí 100 let Gymnázia na Slovaňáku, Brno'
     },
     {
-        datum: '15.01.2023',
-        verejnost: 'soukromá akce',
-        misto: 'U kominíka, Vyškov'
+        datum: '22.07.2023',
+        cas: '20:00',
+        misto: 'Letní noc, Syrovice'
     },
     {
-        datum: '13.01.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
+        datum: '05.08.2023',
+        cas: '20:00',
+        misto: 'ChlenFest, obec Chleny'
     },
     {
-        datum: '13.01.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
+        datum: '26.08.2023',
+        cas: '20:00',
+        misto: 'soukromá akce'
     },
     {
-        datum: '13.01.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
-    },
-    {
-        datum: '13.01.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
-    },
-    {
-        datum: '19.06.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
-    },
-    {
-        datum: '13.01.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
-    },
-    {
-        datum: '13.07.2023',
-        verejnost: 'soukromá akce',
-        misto: 'Melodka, Brno'
+        datum: '26.08.2023',
+        cas: '20:00',
+        misto: 'Burčákové slavnosti, Týn nad Vltavou'
     },
     /*
     {
         datum: '13.01.2023',
-        verejnost: 'soukromá akce',
+        cas: '20:00',
         misto: 'Melodka, Brno'
     },
     */
@@ -63,7 +43,6 @@ function filterConcerts(koncerty) {
     })
 }
 
-console.log(filterConcerts(koncerty));
 
 const filteredConcerts = filterConcerts(koncerty);
 
@@ -73,7 +52,7 @@ const concertsEl = document.getElementById('concerts-container');
 document.addEventListener('DOMContentLoaded', () => {
     filteredConcerts.forEach(koncert => {
         let eachConcert = document.createElement('p');
-        eachConcert.innerHTML = `${koncert.datum}, ${koncert.verejnost}, ${koncert.misto}`;
+        eachConcert.innerHTML = `${koncert.datum}, ${koncert.cas}, ${koncert.misto}`;
         concertsEl.appendChild(eachConcert);
     })
 })
