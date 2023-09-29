@@ -6,18 +6,26 @@ const newGalleryBtn = document.getElementById('open-new-btn');
 
 const oldGalleryBtn = document.getElementById('open-old-btn');
 
+/*
+console.log(newGallery);
+console.log(newGallery.children)
+*/
+
 //dialog close buttons
 
 const closeCurrentModal = document.querySelector('.close-current-modal');
 
 const closeHistoricalModal = document.querySelector('.close-historical-modal');
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    newGalleryBtn.addEventListener('click', openNewGallery);
+
+    newGalleryBtn.addEventListener('click',openNewGallery);
+    
+    closeCurrentModal.addEventListener('click', closeNewGallery);
 
     oldGalleryBtn.addEventListener('click', openOldGallery);
-
-    closeCurrentModal.addEventListener('click', closeNewGallery);
 
     closeHistoricalModal.addEventListener('click', closeOldGallery);
 })
@@ -26,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function openNewGallery() {
     newGallery.showModal();
+    console.log('clicked');
 }
 
 function openOldGallery() {
@@ -40,11 +49,8 @@ function closeOldGallery() {
     oldGallery.close();
 }
 
-
 //Following code enables gallery navigation
-
-
-const currentPhotosArr = Array.from(document.querySelector('#gallery-current').children);
+const currentPhotosArr = Array.from(newGallery.children);
 const historicalPhotosArr = Array.from(document.querySelector('#gallery-historical').children);
 
 //to remove non-img children from the above arrays
@@ -59,15 +65,21 @@ const forwardArrowCurrent = document.getElementById('forward-curr');
 const backArrowHistorical = document.getElementById('back-hist');
 const forwardArrowHistorical = document.getElementById('forward-hist');
 
-document.addEventListener('keydown', function(event) {
+newGallery.addEventListener('keydown', function(event) {
     if (event.key === 'ArrowLeft') {
         nextImageCurrent('back');
-        nextImageHist('back');
     } else if (event.key === 'ArrowRight') {
         nextImageCurrent('forward');
-        nextImageHist('forward');
     }
   });
+
+oldGallery.addEventListener('keydown', function(event) {
+if (event.key === 'ArrowLeft') {
+    nextImageHist('back');
+} else if (event.key === 'ArrowRight') {
+    nextImageHist('forward');
+}
+});
 
 backArrowCurrent.addEventListener('click', () => {
     nextImageCurrent('back');
